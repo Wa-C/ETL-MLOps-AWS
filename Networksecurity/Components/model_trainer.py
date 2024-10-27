@@ -22,7 +22,8 @@ from sklearn.ensemble import(
     RandomForestClassifier
 )
 import mlflow
-
+import dagshub
+dagshub.init(repo_owner='syedwassiulhaque', repo_name='ETL-MLOps-AWS', mlflow=True)
 
 
 class ModelTrainer:

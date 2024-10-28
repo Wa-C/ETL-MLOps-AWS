@@ -75,7 +75,8 @@ EndToEndMLOpsAWSDocker/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/EndToEndMLOpsAWSDocker.git
+git clone https://github.com/Wa-C/ETL-MLOps-AWS
+
 cd EndToEndMLOpsAWSDocker
 ```
 

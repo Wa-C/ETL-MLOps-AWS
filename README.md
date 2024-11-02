@@ -46,27 +46,54 @@ EndToEndMLOpsAWSDocker/
 ├── .github/
 │   └── workflows/
 │       └── main.yaml
-├── .gitignore
-├── Network_Data/
-├── Notebooks/
-├── Networksecurity/
-│   ├── __init__.py
-│   ├── Components/
+├── Network_Data/  # Folder for your datasets
+├── Notebooks/    # Optional for exploratory data analysis
+├── Networksecurity/  # Replace with specific network security configuration
+│   └── __init__.py   # Empty file to mark the directory as a package
+├── Components/     # Reusable code components for ETL and MLOps pipeline
 │   ├── Constants/
-│   ├── Entity/
-│   ├── Logging/
-│   ├── Exception/
-│   ├── Pipeline/
-│   ├── Utils/
-│   └── Cloud/
-├── data_schema/
-│   └── schema.yaml
-├── main.py
-├── app.py
+│   │   └── __init__.py  # Empty file to mark the directory as a package
+│   ├── Entity/       # Data representation classes
+│   │   ├── config_entity.py
+│   │   └── artifact_entity.py
+│   ├── Exceptions/   # Custom exceptions for error handling
+│   │   └── exception.py
+│   ├── Logging/      # Logging configuration and utilities
+│   │   └── logger.py
+│   ├── Pipeline/     # Pipeline orchestration logic
+│   │   └── training_pipeline.py
+│   ├── Utils/        # Generic utilities for data manipulation, etc.
+│   │   ├── __init__.py   # Empty file to mark the directory as a package
+│   │   ├── main_utils.py
+│   │   └── ml_utils/     # Subfolder for machine learning utilities
+│   │       ├── __init__.py  # Empty file to mark the directory as a package
+│   │       ├── metric/      # Subfolder for model evaluation metrics
+│   │       │   └── classification_metric.py
+│   │       └── model/        # Subfolder for model-related utilities
+│   │           ├── __init__.py  # Empty file to mark the directory as a package
+│   │           └── estimator.py
+│   ├── data_ingestion.py
+│   ├── data_transformation.py
+│   ├── data_validation.py
+│   └── model_trainer.py
+├── Cloud/
+│   └── s3_syncer.py  # Script for S3 artifact synchronization (AWS-specific)
 ├── Dockerfile
+├── .gitignore
 ├── requirements.txt
-├── README.md
-└── setup.py
+├── README.md  # Project overview and instructions
+├── setup.py  # Optional for packaging your project
+├── app.py     # FastAPI application for training pipeline triggering and prediction
+├── batch_prediction.py  # Script for batch predictions (optional)
+├── data_schema/
+│   └── schema.yaml  # Data schema definition (e.g., using YAML)
+├── prediction_output/   # Output directory for batch predictions (optional)
+├── templates/   # Templates for UI (e.g., Jinja2 for FastAPI)
+│   └── table.html  # HTML template for displaying predictions (optional)
+└── valid_data/   # Folder for test data without the "result" column (optional)
+     └── test.csv
+
+---
 ```
 
 
